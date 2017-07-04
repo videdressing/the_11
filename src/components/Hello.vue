@@ -1,6 +1,15 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <div class="test-bootstrap">
+      <b-alert show>
+        Default Alert
+      </b-alert>
+
+      <b-alert variant="success" show>
+        Success Alert
+      </b-alert>
+    </div>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>

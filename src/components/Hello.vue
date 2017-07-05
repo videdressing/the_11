@@ -8,35 +8,10 @@
       <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
     </div>
     <div class="row">
-      <div class="col-6 col-lg-4">
-        <h2>Venue 1</h2>
+      <div class="col-6 col-lg-4" v-for="n in 6">
+        <h2>Venue {{ n }}</h2>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="/#/venue/1" role="button">View details &raquo;</a></p>
-      </div><!--/span-->
-      <div class="col-6 col-lg-4">
-        <h2>Venue 2</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="/#/venue/2" role="button">View details &raquo;</a></p>
-      </div><!--/span-->
-      <div class="col-6 col-lg-4">
-        <h2>Venue 3</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="/#/venue/3" role="button">View details &raquo;</a></p>
-      </div><!--/span-->
-      <div class="col-6 col-lg-4">
-        <h2>Venue 4</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="/#/venue/4" role="button">View details &raquo;</a></p>
-      </div><!--/span-->
-      <div class="col-6 col-lg-4">
-        <h2>Venue 5</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="/#/venue/5" role="button">View details &raquo;</a></p>
-      </div><!--/span-->
-      <div class="col-6 col-lg-4">
-        <h2>Venue 6</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="/#/venue/6" role="button">View details &raquo;</a></p>
+        <p><router-link class="btn btn-secondary" :to="{name: 'Venue', params: { id: n }}" role="button">View details &raquo;</router-link></p>
       </div><!--/span-->
     </div><!--/row-->
   </div><!--/span-->

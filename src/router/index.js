@@ -14,6 +14,7 @@ export default new Router({
     },
     {
       path: '/venue/:id(\\d+)',
+      name: 'Venue',
       component: Venue
     },
     {

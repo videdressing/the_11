@@ -31,3 +31,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 http://vuejs-templates.github.io/webpack
 
 https://bootstrap-vue.js.org/docs/setup/
+
+https://www.grafikart.fr/formations/vuejs/vue-router

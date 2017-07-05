@@ -1,32 +1,45 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div class="test-bootstrap">
-      <b-alert show>
-        Default Alert
-      </b-alert>
-
-      <b-alert variant="success" show>
-        Success Alert
-      </b-alert>
+  <div class="col-12 col-md-9 hello">
+    <p class="float-right hidden-md-up">
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <div class="jumbotron">
+      <h1>{{ msg }}</h1>
+      <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
     </div>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+    <div class="row">
+      <div class="col-6 col-lg-4">
+        <h2>Venue 1</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="/#/venue/1" role="button">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="col-6 col-lg-4">
+        <h2>Venue 2</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="/#/venue/2" role="button">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="col-6 col-lg-4">
+        <h2>Venue 3</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="/#/venue/3" role="button">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="col-6 col-lg-4">
+        <h2>Venue 4</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="/#/venue/4" role="button">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="col-6 col-lg-4">
+        <h2>Venue 5</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="/#/venue/5" role="button">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="col-6 col-lg-4">
+        <h2>Venue 6</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="/#/venue/6" role="button">View details &raquo;</a></p>
+      </div><!--/span-->
+    </div><!--/row-->
+  </div><!--/span-->
 </template>
 
 <script>

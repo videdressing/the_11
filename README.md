@@ -1,6 +1,6 @@
 # the_11
 
-> A selection of great addresses from Videdressing
+> A selection of great venues from Videdressing
 
 ## Build Setup
 
@@ -33,3 +33,11 @@ http://vuejs-templates.github.io/webpack
 https://bootstrap-vue.js.org/docs/setup/
 
 https://www.grafikart.fr/formations/vuejs/vue-router
+
+https://github.com/vuejs/vuefire
+
+https://firebase.google.com/docs/reference/js/
+
+https://github.com/vuejs/vuefire/issues/39
+
+https://forum-archive.vuejs.org/topic/543/img-src-issues/3

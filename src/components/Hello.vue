@@ -19,9 +19,6 @@
 
 <script>
 import db from '../firebase.js'
-var venuesRef = db.ref('venues')
-
-console.log(db.ref().child('venues'))
 
 export default {
   name: 'hello',
@@ -31,7 +28,7 @@ export default {
     }
   },
   firebase: {
-    venues: venuesRef.limitToLast(6)
+    venues: db.ref('venues').limitToLast(6)
   }
 }
 </script>

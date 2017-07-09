@@ -8,22 +8,30 @@
       <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
     </div>
     <div class="row">
-      <div class="col-6 col-lg-4" v-for="n in 6">
-        <h2>Venue {{ n }}</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><router-link class="btn btn-secondary" :to="{name: 'Venue', params: { id: n }}" role="button">View details &raquo;</router-link></p>
+      <div class="col-6 col-lg-4" v-for="venue in venues">
+        <h2>{{ venue.name }}</h2>
+        <p>{{ venue.short_description }}</p>
+        <p><router-link class="btn btn-secondary" :to="{name: 'Venue', params: { id: venue.id }}" role="button">View details &raquo;</router-link></p>
       </div><!--/span-->
     </div><!--/row-->
   </div><!--/span-->
 </template>
 
 <script>
+import db from '../firebase.js'
+var venuesRef = db.ref('venues')
+
+console.log(db.ref().child('venues'))
+
 export default {
   name: 'hello',
   data () {
     return {
       msg: 'Welcome to Your The_11 App'
     }
+  },
+  firebase: {
+    venues: venuesRef.limitToLast(6)
   }
 }
 </script>

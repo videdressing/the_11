@@ -7,6 +7,9 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 
+import VueFire from 'vuefire'
+Vue.use(VueFire)
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 

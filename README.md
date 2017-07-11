@@ -2,6 +2,41 @@
 
 > A selection of great venues from Videdressing
 
+## How to install it
+
+# We would recommand you to use this container
+https://github.com/klessou/vue-cli-docker
+
+git clone git@github.com:klessou/vue-cli-docker.git
+cd vue-cli-docker
+
+# And then put the project here
+cd app
+git clone git@github.com:videdressing/the_11.git
+cd ..
+
+# Prepare your environment
+docker-compose up -d
+. ./dev.sh
+
+# Open your local url
+http://localhost:8080/
+
+## How to deploy it
+
+# Prepare your environment
+docker-compose up -d
+. ./dev.sh
+
+# Build
+npm run build
+
+# Get a firebase token
+web-firebase login:ci --no-localhost
+
+# Deploy on firebase
+web-firebase deploy --token <YOUR TOKEN>
+
 ## Build Setup
 
 ``` bash
@@ -25,6 +60,7 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
 
 ## More documentation
 

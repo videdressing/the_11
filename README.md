@@ -4,6 +4,7 @@
 
 ## How to install it
 
+``` bash
 # We would recommand you to use this container
 https://github.com/klessou/vue-cli-docker
 
@@ -21,9 +22,11 @@ docker-compose up -d
 
 # Open your local url
 http://localhost:8080/
+```
 
 ## How to deploy it
 
+``` bash
 # Prepare your environment
 docker-compose up -d
 . ./dev.sh
@@ -36,6 +39,7 @@ web-firebase login:ci --no-localhost
 
 # Deploy on firebase
 web-firebase deploy --token <YOUR TOKEN>
+```
 
 ## Build Setup
 

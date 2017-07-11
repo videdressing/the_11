@@ -32,7 +32,7 @@ docker-compose up -d
 . ./dev.sh
 
 # Build
-npm run build
+web-npm run build
 
 # Get a firebase token
 web-firebase login:ci --no-localhost
@@ -45,22 +45,22 @@ web-firebase deploy --token <YOUR TOKEN>
 
 ``` bash
 # install dependencies
-npm install
+web-npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+web-npm run dev
 
 # build for production with minification
-npm run build
+web-npm run build
 
 # build for production and view the bundle analyzer report
-npm run build --report
+web-npm run build --report
 
 # run unit tests
-npm run unit
+web-npm run unit
 
 # run all tests
-npm test
+web-npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

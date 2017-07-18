@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 col-md-9 hello">
+  <div class="col-12 col-md-12 hello">
     <p class="float-right hidden-md-up">
       <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
     </p>

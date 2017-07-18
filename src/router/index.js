@@ -22,10 +22,12 @@ export default new Router({
     },
     {
       path: '/auth',
+      name: 'Auth',
       component: Auth
     },
     {
       path: '/success',
+      name: 'AuthSuccess',
       component: AuthSuccess
     },
     {

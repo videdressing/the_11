@@ -11,4 +11,8 @@ let firebaseApp = Firebase.initializeApp({
 
 let db = firebaseApp.database()
 
-export default db
+import FirebaseUi from 'firebaseui'
+
+let ui = new FirebaseUi.auth.AuthUI(Firebase.auth())
+
+export {db as default, ui}

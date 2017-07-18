@@ -4,17 +4,18 @@
 
 
 <script>
-import firebase from 'firebase'
-import firebaseui from 'firebaseui'
+import {db, ui} from '../firebase.js'
+import Firebase from 'firebase'
 
 export default {
   name: 'auth',
   mounted () {
+    var toto = db
+    console.log(toto)
     var uiConfig = {
       signInSuccessUrl: '/success',
-      signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
+      signInOptions: [Firebase.auth.GoogleAuthProvider.PROVIDER_ID]
     }
-    var ui = new firebaseui.auth.AuthUI(firebase.auth())
     ui.start('#firebaseui-auth-container', uiConfig)
   }
 }

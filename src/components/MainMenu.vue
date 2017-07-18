@@ -3,14 +3,10 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">The_11</a>
+      <router-link class="navbar-brand" :to="{name: 'Hello'}">The_11</router-link>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <router-link class="nav-link" :to="{name: 'Hello'}">Home</router-link>
-            <!-- a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a-->
-          </li>
           <li class="nav-item">
             <router-link class="nav-link" :to="{name: 'Auth'}">Sign in</router-link>
           </li>

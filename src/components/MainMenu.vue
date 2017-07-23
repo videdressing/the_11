@@ -12,19 +12,35 @@
       </b-nav>
 
       <b-nav is-nav-bar class="ml-auto">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <b-form inline>
+          <b-form-input v-model="search"
+            type="text"
+            placeholder="Search"
+            :state="search.length?'success':'warning'"
+            :formatter="format"
+            class="mr-sm-2"
+          ></b-form-input>
+          <b-button :variant="'outline-success'" type="submit">Search</b-button>
+        </b-form>
       </b-nav>
-      
+
     </b-collapse>
   </b-navbar>
 </template>
 
 <script>
 export default {
-  name: 'main-menu'
+  name: 'main-menu',
+  data () {
+    return {
+      search: ''
+    }
+  },
+  methods: {
+    format (value) {
+      return value.toLowerCase()
+    }
+  }
 }
 </script>
 

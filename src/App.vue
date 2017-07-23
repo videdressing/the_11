@@ -9,7 +9,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2017</p>
+        <p>&copy; Videdressing 2017</p>
       </footer>
     </div><!--/.container-->
   </div>

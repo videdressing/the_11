@@ -3,11 +3,13 @@
     <p class="float-right hidden-md-up">
       <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
     </p>
-    <div class="jumbotron">
-      <h1>{{ msg }}</h1>
-      <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-    </div>
-    <div class="row">
+    
+    <b-jumbotron :header="msg" lead='Explore a different side of the "11ème arrondissement" with Videdressing' >
+      <p>For more information visit website</p>
+      <b-btn variant="primary" href="https://github.com/videdressing/the_11">Docs</b-btn>
+    </b-jumbotron>
+
+    <div class="row venues">
       <div class="col-6 col-lg-4" v-for="venue in venues">
         <h2>{{ venue.name }}</h2>
         <p>{{ venue.short_description }}</p>
@@ -24,7 +26,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your The_11 App'
+      msg: 'Welcome to The_11'
     }
   },
   firebase: {
@@ -49,7 +51,7 @@ li {
   margin: 0 10px;
 }
 
-a {
+.venues a {
   color: #42b983;
 }
 </style>

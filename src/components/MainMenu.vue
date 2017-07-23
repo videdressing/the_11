@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
+    <b-navbar type="toggleable-md" fixed="top" class="navbar-inverse bg-inverse"> 
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -16,7 +16,7 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
-    </nav>
+    </b-navbar>
 </template>
 
 <script>

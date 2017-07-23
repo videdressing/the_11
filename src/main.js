@@ -24,13 +24,11 @@ new Vue({
   router,
   created () {
     Firebase.auth().onAuthStateChanged((user) => {
-      /*
       if (user) {
         this.$router.push('/success')
       } else {
         this.$router.push('/auth')
       }
-      */
     })
   },
   template: '<App/>',

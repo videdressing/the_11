@@ -11,3 +11,33 @@
     <pre>{{user}}</pre>
   </div>
 </template>
+
+<script>
+import Firebase from 'firebase'
+
+export default {
+  data () {
+    return {
+      photo: '',
+      userId: '',
+      name: '',
+      email: '',
+      user: {}
+    }
+  },
+  created () {
+    this.user = Firebase.auth().currentUser
+    if (this.user) {
+      this.name = this.user.displayName
+      this.email = this.user.email
+      this.photo = this.user.photoURL
+      this.userId = this.user.uid
+    }
+  },
+  methods: {
+    logOut () {
+      Firebase.auth().signOut()
+    }
+  }
+}
+</script>

@@ -1,22 +1,25 @@
 <template>
-    <b-navbar type="toggleable-md" fixed="top" class="navbar-inverse bg-inverse"> 
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <router-link class="navbar-brand" :to="{name: 'Hello'}">The_11</router-link>
+  <b-navbar type="toggleable-md" fixed="top" class="navbar-inverse bg-inverse"> 
+    <b-nav-toggle target="nav_collapse"></b-nav-toggle>
+    <b-link class="navbar-brand" :to="{name: 'Hello'}">
+      <span>The_11</span>
+    </b-link>
+    
+    <b-collapse is-nav id="nav_collapse">
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <router-link class="nav-link" :to="{name: 'Auth'}">Sign in</router-link>
-          </li>
-        </ul>
+      <b-nav is-nav-bar>
+        <b-nav-item :to="{name: 'Auth'}">Sign in</b-nav-item>
+      </b-nav>
+
+      <b-nav is-nav-bar class="ml-auto">
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-      </div>
-    </b-navbar>
+      </b-nav>
+      
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <script>

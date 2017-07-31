@@ -8,7 +8,15 @@
     <b-collapse is-nav id="nav_collapse">
 
       <b-nav is-nav-bar>
-        <b-nav-item :to="{name: 'Auth'}">Sign in</b-nav-item>
+        <b-nav-item :to="{name: 'Login'}">Sign in</b-nav-item>
+      </b-nav>
+
+      <b-nav is-nav-bar>
+        <b-nav-item :to="{name: 'Logout'}">Logout</b-nav-item>
+      </b-nav>
+
+      <b-nav is-nav-bar>
+        <b-nav-item :to="{name: 'Profile'}">Profile</b-nav-item>
       </b-nav>
 
       <b-nav is-nav-bar class="ml-auto">

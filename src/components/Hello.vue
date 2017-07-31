@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import db from '../firebase.js'
+import {db} from '../initFirebase.js'
 
 export default {
   name: 'hello',

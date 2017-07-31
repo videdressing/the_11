@@ -1,36 +1,36 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Firebase from 'firebase'
+// polyfills
+import 'es6-promise/auto'
+import 'weakmap' // for vuexfire, using (imports-loader)
 
 import Vue from 'vue'
 import App from './App'
+import store from './store'
 import router from './router'
+import { sync } from 'vuex-router-sync'
 
+// bootstrap
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+// firebase
+import './initFirebase'
 import VueFire from 'vuefire'
 Vue.use(VueFire)
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import 'firebaseui/dist/firebaseui.css'
-
 Vue.config.productionTip = false
+
+// Sync the router with the vuex store. This registers `store.state.route`
+sync(store, router)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  created () {
-    Firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.$router.push('/success')
-      } else {
-        this.$router.push('/auth')
-      }
-    })
-  },
+  store,
   template: '<App/>',
   components: { App }
 })

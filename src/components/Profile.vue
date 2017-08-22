@@ -2,7 +2,7 @@
 <div>
   <h1>My Profile</h1>
   <hr />
-
+  {{ user }}
   <img :src="user.photoURL" />
   <h3>{{user.displayName}}</h3>
   <p>email: {{user.email}}</p>

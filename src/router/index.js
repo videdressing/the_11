@@ -30,7 +30,7 @@ const router = new Router({
       component: Login,
       beforeEnter: (to, from, next) => {
         if (store.state.user) {
-          next('Hello')
+          next('/')
         } else {
           next()
         }
@@ -86,4 +86,3 @@ router.beforeEach((to, from, next) => {
 })
 
 export default router
-

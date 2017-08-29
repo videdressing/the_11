@@ -14,7 +14,7 @@ export default {
   firebase () {
     return {
       venue: {
-        source: db.ref('venues/' + this.$route.params.id),
+        source: db.ref('venues/' + this.$route.params.key),
         asObject: true
       }
     }

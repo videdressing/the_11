@@ -20,7 +20,7 @@ const router = new Router({
       component: Hello
     },
     {
-      path: '/venue/:id(\\d+)',
+      path: '/venue/:key',
       name: 'Venue',
       component: Venue
     },

@@ -10,7 +10,7 @@
     </b-jumbotron>
 
     <div class="row venues">
-      <div class="col-6 col-lg-4" v-for="(venue, key, index) in venues">
+      <div class="col-6 col-lg-4" v-for="(venue, key) in venues" v-if="key != '.key'" >
         <h2>{{ venue.name }}</h2>
         <p>{{ venue.short_description }}</p>
         <p><router-link class="btn btn-secondary" :to="{name: 'Venue', params: { key: key }}" role="button">View details &raquo;</router-link></p>

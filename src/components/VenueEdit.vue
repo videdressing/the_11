@@ -11,6 +11,10 @@
       <h5>Venue price level:</h5>
       <b-form-select v-model="venue.price_level" :options="priceOptions" class="mb-3">
       </b-form-select>
+
+      <h5>Description:</h5>
+      <b-form-input textarea v-model="venue.description" placeholder="Venue description" rows="5"></b-form-input>
+
     </b-form>
   </div>
 </template>

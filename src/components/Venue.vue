@@ -1,7 +1,7 @@
 <template>
   <div class="col-12 col-md-9 venue">
-    <venue-view :venue="venue"></venue-view>
     <venue-edit :venue="venue"></venue-edit>
+    <venue-view :venue="venue"></venue-view>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Edition form</h1>
-    <b-form>
+    <b-form @submit="onSubmit">
       <h5>Venue name:</h5>
       <b-form-input id="venue-name"
         type="text" v-model="venue.name" required
@@ -14,19 +14,29 @@
 
       <h5>Description:</h5>
       <b-form-input textarea v-model="venue.description" placeholder="Venue description" rows="5"></b-form-input>
-
+      <b-button type="submit" variant="success">Ok</b-button>
     </b-form>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['venue'],
-  data: function () {
-    return {
-      priceOptions: {1: '1', 2: '2', 3: '3', 4: '4'}
+  import {db} from '../initFirebase.js'
+
+  let venuesRef = db.ref('venues')
+  export default {
+    props: ['venue'],
+    data: function () {
+      return {
+        priceOptions: {1: '1', 2: '2', 3: '3', 4: '4'}
+      }
+    },
+    methods: {
+      onSubmit: function (evt) {
+        evt.preventDefault()
+        this.venue.id = this.venue.name.replace(' ', '').toLowerCase()
+        venuesRef.push(this.venue)
+      }
     }
-  }
 }
 </script>
 

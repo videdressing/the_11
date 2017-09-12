@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ venue.name }}</h1>
+    <h1>{{ venue.name }} ({{ venue.id }})</h1>
     <ul>
       <li v-for="picture in venue.pictures">
         <img v-bind:src="picture" />

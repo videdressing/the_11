@@ -1,10 +1,10 @@
 <template>
-  <b-navbar toggleable="md" fixed="top" type="dark" variant="dark"> 
+  <b-navbar toggleable="md" fixed="top" type="dark" variant="dark">
     <b-nav-toggle target="nav_collapse"></b-nav-toggle>
     <b-link class="navbar-brand" :to="{name: 'Hello'}">
       <span>The_11</span>
     </b-link>
-    
+
     <b-collapse is-nav id="nav_collapse">
 
       <b-nav is-nav-bar>
@@ -17,6 +17,10 @@
 
       <b-nav is-nav-bar>
         <b-nav-item :to="{name: 'Profile'}">Profile</b-nav-item>
+      </b-nav>
+
+      <b-nav is-nav-bar>
+        <b-nav-item :to="{name: 'VenueCreation'}">Add Venue</b-nav-item>
       </b-nav>
 
       <b-nav is-nav-bar class="ml-auto">

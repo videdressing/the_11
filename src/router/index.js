@@ -25,6 +25,11 @@ const router = new Router({
       component: Venue
     },
     {
+      path: '/venue',
+      name: 'VenueCreation',
+      component: Venue
+    },
+    {
       path: '/login',
       name: 'Login',
       component: Login,

@@ -1,9 +1,5 @@
 <template>
   <div class="col-12 col-md-12 hello">
-    <p class="float-right hidden-md-up">
-      <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
-    </p>
-    
     <b-jumbotron :header="msg" lead='Explore a different side of the "11ème arrondissement" with Videdressing' >
       <p>For more information visit website</p>
       <b-btn variant="primary" href="https://github.com/videdressing/the_11">Docs</b-btn>
@@ -54,7 +50,4 @@ li {
   margin: 0 10px;
 }
 
-.venues a {
-  color: #42b983;
-}
 </style>

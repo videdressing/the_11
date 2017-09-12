@@ -11,13 +11,29 @@ import VenueView from './VenueView'
 import VenueEdit from './VenueEdit'
 
 export default {
-  firebase () {
+  data () {
+    var id = (this.$route.params.key ? this.$route.params.key : '')
     return {
       venue: {
-        source: db.ref('venues/' + this.$route.params.key),
-        asObject: true
+        name: '',
+        pictures: [],
+        description: '',
+        price_level: 1,
+        short_description: '',
+        id: id
       }
     }
+  },
+  firebase () {
+    if (this.$route.params.key) {
+      return {
+        venue: {
+          source: db.ref('venues/' + this.$route.params.key),
+          asObject: true
+        }
+      }
+    }
+    return {}
   },
   components: {
     VenueView,

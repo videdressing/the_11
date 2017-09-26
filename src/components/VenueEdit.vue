@@ -33,8 +33,10 @@
     methods: {
       onSubmit: function (evt) {
         evt.preventDefault()
-        this.venue.id = this.venue.name.replace(' ', '').toLowerCase()
-        venuesRef.push(this.venue)
+        if (!this.venue['.key']) {
+          venuesRef.push(this.venue)
+          this.$router.push('/')
+        }
       }
     }
 }

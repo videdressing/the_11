@@ -12,15 +12,13 @@ import VenueEdit from './VenueEdit'
 
 export default {
   data () {
-    var id = (this.$route.params.key ? this.$route.params.key : '')
     return {
       venue: {
         name: '',
         pictures: [],
         description: '',
         price_level: 1,
-        short_description: '',
-        id: id
+        short_description: ''
       }
     }
   },

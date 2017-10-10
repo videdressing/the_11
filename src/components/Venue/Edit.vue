@@ -20,11 +20,8 @@
 </template>
 
 <script>
-  import {db} from '../initFirebase.js'
-
-  let venuesRef = db.ref('venues')
   export default {
-    props: ['venue'],
+    props: ['venue', 'venuesRef'],
     data: function () {
       return {
         priceOptions: {1: '1', 2: '2', 3: '3', 4: '4'}
@@ -33,10 +30,10 @@
     methods: {
       onSubmit: function (evt) {
         evt.preventDefault()
-        if (!this.venue['.key']) {
-          venuesRef.push(this.venue)
-          this.$router.push('/')
-        }
+        var venue = {...this.venue} // copy
+        delete venue['.key'] // delete key
+        this.venuesRef.child(this.venue['.key']).set(venue)
+        this.$router.push('/')
       }
     }
 }

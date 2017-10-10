@@ -1,25 +1,19 @@
 <template>
   <div class="col-12 col-md-9 venue">
-    <venue-edit :venue="venue"></venue-edit>
-    <venue-view :venue="venue"></venue-view>
+    <venue-edit :venue="venue" :venuesRef="venuesRef"></venue-edit>
+    <venue-preview :venue="venue"></venue-preview>
   </div>
 </template>
 
 <script>
-import {db} from '../initFirebase.js'
-import VenueView from './VenueView'
-import VenueEdit from './VenueEdit'
+import {db} from '../../initFirebase.js'
+import VenuePreview from './Preview'
+import VenueEdit from './Edit'
 
 export default {
   data () {
     return {
-      venue: {
-        name: '',
-        pictures: [],
-        description: '',
-        price_level: 1,
-        short_description: ''
-      }
+      venuesRef: db.ref('venues')
     }
   },
   firebase () {
@@ -34,7 +28,7 @@ export default {
     return {}
   },
   components: {
-    VenueView,
+    VenuePreview,
     VenueEdit
   }
 }

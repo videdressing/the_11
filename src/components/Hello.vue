@@ -6,10 +6,10 @@
     </b-jumbotron>
 
     <div class="row venues">
-      <div class="col-6 col-lg-4" v-for="(venue, key) in venues" v-if="key != '.key'" >
+      <div class="col-6 col-lg-4" v-for="venue in venues">
         <h2>{{ venue.name }}</h2>
         <p>{{ venue.short_description }}</p>
-        <p><router-link class="btn btn-secondary" :to="{name: 'Venue', params: { key: key }}" role="button">View details &raquo;</router-link></p>
+        <p><router-link class="btn btn-secondary" :to="{name: 'VenueView', params: { key: venue['.key'] }}" role="button">View details &raquo;</router-link></p>
       </div><!--/span-->
     </div><!--/row-->
   </div><!--/span-->
@@ -25,10 +25,15 @@ export default {
       msg: 'Welcome to The_11'
     }
   },
+  computed: {
+    venues () {
+      return this.dbVenues.reverse()
+    }
+  },
   firebase: {
-    venues: {
+    dbVenues: {
       source: db.ref('venues').limitToLast(6),
-      asObject: true
+      asObject: false
     }
   }
 }

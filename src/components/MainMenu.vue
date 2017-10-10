@@ -20,7 +20,7 @@
       </b-nav>
 
       <b-nav is-nav-bar>
-        <b-nav-item :to="{name: 'VenueCreation'}">Add Venue</b-nav-item>
+        <b-nav-item :to="{name: 'VenueAdd'}">Add Venue</b-nav-item>
       </b-nav>
 
       <b-nav is-nav-bar class="ml-auto">

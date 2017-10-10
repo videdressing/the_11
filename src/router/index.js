@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import firebase from 'firebase'
 import store from '@/store'
 import Hello from '@/components/Hello'
-import Venue from '@/components/Venue'
+import VenueView from '@/components/Venue/View'
+import VenueAdd from '@/components/Venue/Add'
 import Login from '@/components/Login'
 import Profile from '@/components/Profile'
 // import Auth from '@/components/Auth'
@@ -21,13 +22,13 @@ const router = new Router({
     },
     {
       path: '/venue/:key',
-      name: 'Venue',
-      component: Venue
+      name: 'VenueView',
+      component: VenueView
     },
     {
-      path: '/venue',
-      name: 'VenueCreation',
-      component: Venue
+      path: '/add-venue',
+      name: 'VenueAdd',
+      component: VenueAdd
     },
     {
       path: '/login',

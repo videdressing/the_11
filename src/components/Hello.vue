@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 col-md-12 hello">
+  <div class="col-12">
     <b-jumbotron :header="msg" lead='Explore a different side of the "11ème arrondissement" with Videdressing' >
       <p>For more information visit website</p>
       <b-btn variant="primary" href="https://github.com/videdressing/the_11">Docs</b-btn>

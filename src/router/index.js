@@ -4,7 +4,8 @@ import firebase from 'firebase'
 import store from '@/store'
 import Hello from '@/components/Hello'
 import VenueView from '@/components/Venue/View'
-import VenueAdd from '@/components/Venue/Add'
+import VenueEdit from '@/components/Venue/Edit'
+// import VenueAdd from '@/components/Venue/Add'
 import Login from '@/components/Login'
 import Profile from '@/components/Profile'
 // import Auth from '@/components/Auth'
@@ -28,7 +29,7 @@ const router = new Router({
     {
       path: '/add-venue',
       name: 'VenueAdd',
-      component: VenueAdd
+      component: VenueEdit
     },
     {
       path: '/login',

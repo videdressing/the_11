@@ -1,6 +1,6 @@
 <template>
   <div class="col-12 col-md-9 venue">
-    <venue-edit :venue="venue" :venuesRef="venuesRef"></venue-edit>
+    <venue-edit :venue="venue"></venue-edit>
     <venue-preview :venue="venue"></venue-preview>
   </div>
 </template>
@@ -11,11 +11,6 @@ import VenuePreview from './Preview'
 import VenueEdit from './Edit'
 
 export default {
-  data () {
-    return {
-      venuesRef: db.ref('venues')
-    }
-  },
   firebase () {
     if (this.$route.params.key) {
       return {

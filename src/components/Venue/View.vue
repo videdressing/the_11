@@ -1,6 +1,6 @@
 <template>
   <div class="col-12 col-md-9 venue">
-    <venue-edit :venue="venue"></venue-edit>
+    <venue-edit :venue="venue" class="border border-top-0 border-right-0 border-left-0 mb-3 pb-3"></venue-edit>
     <venue-preview :venue="venue"></venue-preview>
   </div>
 </template>

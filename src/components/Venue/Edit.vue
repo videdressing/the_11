@@ -1,6 +1,6 @@
 <template>
   <div class="col-12">
-    <h1>Edition form</h1>
+    <h1>{{ title }}</h1>
     <b-form @submit="onSubmit">
       <h5>Venue name:</h5>
       <b-form-input id="venue-name"
@@ -16,7 +16,7 @@
       <b-form-textarea v-model="venue.description"
         placeholder="Venue description"
         :rows="5" :max-rows="6" class="mb-3"></b-form-textarea>
-      <b-button type="submit" variant="success">Ok</b-button>
+      <b-button type="submit" variant="success" size="lg">Ok</b-button>
     </b-form>
   </div>
 </template>
@@ -42,6 +42,7 @@
     },
     data: function () {
       return {
+        title: this.venue['.key'] ? 'Edition form' : 'Creation form',
         priceOptions: {1: '€', 2: '€€', 3: '€€€', 4: '€€€€'}
       }
     },

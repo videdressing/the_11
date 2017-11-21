@@ -6,7 +6,8 @@
         <img v-bind:src="picture" />
       </li>
     </ul>
-    <p>{{ venue.description }}</p>
+    <pre>{{ venue.address }}</pre>
+    <pre>{{ venue.description }}</pre>
   </div>
 </template>
 
@@ -18,5 +19,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+pre {
+  white-space: pre-wrap; 
+  word-wrap: break-word;
+  font-family: inherit;
+}
 </style>

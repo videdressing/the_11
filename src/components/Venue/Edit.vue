@@ -16,6 +16,12 @@
       <b-form-textarea v-model="venue.description"
         placeholder="Venue description"
         :rows="5" :max-rows="6" class="mb-3"></b-form-textarea>
+
+      <h5>Address:</h5>
+      <b-form-textarea v-model="venue.address"
+        placeholder="Venue Address"
+        :rows="3" :max-rows="4" class="mb-3"></b-form-textarea>
+
       <b-button type="submit" variant="success" size="lg">Ok</b-button>
     </b-form>
   </div>
@@ -35,7 +41,7 @@
             pictures: [],
             description: '',
             price_level: 1,
-            short_description: ''
+            address: ''
           }
         }
       }

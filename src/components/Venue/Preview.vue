@@ -6,7 +6,7 @@
         <img v-bind:src="picture" />
       </li>
     </ul>
-    <pre>{{ venue.address }}</pre>
+    <p>{{ venue.address.postal_code }}</p>
     <pre>{{ venue.description }}</pre>
   </div>
 </template>

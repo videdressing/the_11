@@ -18,9 +18,16 @@
         :rows="5" :max-rows="6" class="mb-3"></b-form-textarea>
 
       <h5>Address:</h5>
-      <b-form-textarea v-model="venue.address"
-        placeholder="Venue Address"
-        :rows="3" :max-rows="4" class="mb-3"></b-form-textarea>
+      <vue-google-autocomplete
+        ref="address"
+        id="map"
+        classname="form-control"
+        placeholder="Please type your address"
+        v-on:placechanged="getAddressData"
+        country="fr"
+        class="mb-3"
+      >
+      </vue-google-autocomplete>
 
       <b-button type="submit" variant="success" size="lg">Ok</b-button>
     </b-form>
@@ -28,10 +35,12 @@
 </template>
 
 <script>
+  import VueGoogleAutocomplete from 'vue-google-autocomplete'
   import {db} from '../../initFirebase.js'
   let venuesRef = db.ref('venues')
 
   export default {
+    components: { VueGoogleAutocomplete },
     props: {
       venue: {
         type: Object,
@@ -65,6 +74,15 @@
         }
 
         this.$router.push('/')
+      },
+      /**
+      * When the location found
+      * @param {Object} addressData Data of the found location
+      * @param {Object} placeResultData PlaceResult object
+      * @param {String} id Input container ID
+      */
+      getAddressData: function (addressData, placeResultData, id) {
+        this.venue.address = addressData
       }
     }
 }

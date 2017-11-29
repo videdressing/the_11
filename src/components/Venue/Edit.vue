@@ -29,6 +29,9 @@
       >
       </vue-google-autocomplete>
 
+      <input type="file" class="form-control mb-3"
+        v-on:change="upload($event.target.files)" accept="image/*" />
+
       <b-button type="submit" variant="success" size="lg">Ok</b-button>
     </b-form>
   </div>
@@ -58,7 +61,18 @@
     data: function () {
       return {
         title: this.venue['.key'] ? 'Edition form' : 'Creation form',
-        priceOptions: {1: '€', 2: '€€', 3: '€€€', 4: '€€€€'}
+        priceOptions: {1: '€', 2: '€€', 3: '€€€', 4: '€€€€'},
+        cloudinary: {
+          uploadPreset: 'nnbgn8se',
+          apiKey: '118663883161386',
+          cloudName: 'the11'
+        }
+      }
+    },
+    computed: {
+      clUrl: function () {
+        return 'https://api.cloudinary.com/v1_1/' +
+          this.cloudinary.cloudName + '/upload'
       }
     },
     methods: {
@@ -75,14 +89,20 @@
 
         this.$router.push('/')
       },
-      /**
-      * When the location found
-      * @param {Object} addressData Data of the found location
-      * @param {Object} placeResultData PlaceResult object
-      * @param {String} id Input container ID
-      */
       getAddressData: function (addressData, placeResultData, id) {
         this.venue.address = addressData
+      },
+      upload: function (file) {
+        const formData = new FormData()
+        formData.append('file', file[0])
+        formData.append('upload_preset', this.cloudinary.uploadPreset)
+        formData.append('tags', 'gs-vue,gs-vue-uploaded')
+        // for (var pair of formData.entries()) {
+        //   console.log(pair[0] + ', ' + pair[1])
+        // }
+        this.$http.post(this.clUrl, formData).then(res => {
+          this.venue.pictures.push(res.body)
+        })
       }
     }
 }

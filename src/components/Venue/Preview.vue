@@ -3,7 +3,7 @@
     <h1>{{ venue.name }}</h1>
     <ul>
       <li v-for="picture in venue.pictures">
-        <img v-bind:src="picture" />
+        <img v-bind:src="picture.url" />
       </li>
     </ul>
     <p>{{ venue.address.postal_code }}</p>

@@ -21,6 +21,10 @@ import './initFirebase'
 import VueFire from 'vuefire'
 Vue.use(VueFire)
 
+// resource
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
 Vue.config.productionTip = false
 
 // Sync the router with the vuex store. This registers `store.state.route`

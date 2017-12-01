@@ -1,6 +1,14 @@
 <template>
-  <div class="col-12 col-md-9 venue">
-    <venue-edit :venue="venue" class="border border-top-0 border-right-0 border-left-0 mb-3 pb-3"></venue-edit>
+  <div class="col-12 venue">
+    <b-button-toolbar aria-label="Toolbar" class="float-right">
+      <b-button-group>
+        <b-btn v-b-toggle.editionForm class="m-1">Edit Venue</b-btn>
+      </b-button-group>
+    </b-button-toolbar>
+    
+    <b-collapse id="editionForm">
+      <venue-edit :venue="venue" class="border border-top-0 border-right-0 border-left-0 mb-3 pb-3"></venue-edit>
+    </b-collapse>
     <venue-preview :venue="venue"></venue-preview>
   </div>
 </template>

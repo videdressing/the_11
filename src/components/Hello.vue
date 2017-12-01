@@ -8,7 +8,8 @@
     <div class="row venues">
       <div class="col-6 col-lg-4" v-for="venue in venues">
         <h2>{{ venue.name }}</h2>
-        <p>{{ venue.short_description }}</p>
+        <b-img thumbnail fluid :src="getThumb(venue.pictures[0].url)" alt="Thumbnail" />
+        <p>{{ venue.description }}</p>
         <p><router-link class="btn btn-secondary" :to="{name: 'VenueView', params: { key: venue['.key'] }}" role="button">View details &raquo;</router-link></p>
       </div><!--/span-->
     </div><!--/row-->
@@ -34,6 +35,11 @@ export default {
     dbVenues: {
       source: db.ref('venues').limitToLast(6),
       asObject: false
+    }
+  },
+  methods: {
+    getThumb: function (url) {
+      return url.replace(/v[0-9]+/, 'w_400,h_150,c_fill')
     }
   }
 }

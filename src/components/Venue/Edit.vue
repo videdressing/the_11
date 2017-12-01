@@ -29,8 +29,24 @@
       >
       </vue-google-autocomplete>
 
-      <input type="file" class="form-control mb-3"
-        v-on:change="upload($event.target.files)" accept="image/*" />
+      <h5>Pictures:</h5>
+
+      <b-form-file type="file" class="form-control mb-3" multiple
+        v-on:change="upload($event.target.files)" accept="image/*">
+      </b-form-file>
+
+      <b-container fluid class="p-4 bg-dark mb-3">
+        <b-row class="mb-2 text-center">
+          <b-col v-for="picture in venue.pictures">
+            <b-img thumbnail fluid :src="getThumb(picture.url)" alt="Thumbnail" />
+          </b-col>
+        </b-row>
+        <b-row class="text-center">
+          <b-col v-for="(picture, index) in venue.pictures">
+            <b-button variant="warning" size="sm" v-on:click="removePicture(index)">Remove</b-button>
+          </b-col>
+        </b-row>
+      </b-container>
 
       <b-button type="submit" variant="success" size="lg">Ok</b-button>
     </b-form>
@@ -92,17 +108,29 @@
       getAddressData: function (addressData, placeResultData, id) {
         this.venue.address = addressData
       },
-      upload: function (file) {
+      upload: function (files) {
         const formData = new FormData()
-        formData.append('file', file[0])
-        formData.append('upload_preset', this.cloudinary.uploadPreset)
-        formData.append('tags', 'gs-vue,gs-vue-uploaded')
-        // for (var pair of formData.entries()) {
-        //   console.log(pair[0] + ', ' + pair[1])
-        // }
-        this.$http.post(this.clUrl, formData).then(res => {
-          this.venue.pictures.push(res.body)
+        var that = this
+        Object.keys(files).forEach(function (key) {
+          formData.append('file', files[key])
+          formData.append('upload_preset', that.cloudinary.uploadPreset)
+          formData.append('tags', 'gs-vue,gs-vue-uploaded')
+          // for (var pair of formData.entries()) {
+          //   console.log(pair[0] + ', ' + pair[1])
+          // }
+          that.$http.post(that.clUrl, formData).then(res => {
+            if (that.venue.pictures === undefined) {
+              that.venue.pictures = []
+            }
+            that.venue.pictures.push(res.body)
+          })
         })
+      },
+      removePicture: function (index) {
+        this.venue.pictures.splice(index, 1)
+      },
+      getThumb: function (url) {
+        return url.replace(/v[0-9]+/, 'w_250,h_250,c_fill')
       }
     }
 }

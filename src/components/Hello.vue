@@ -5,14 +5,14 @@
       <b-btn variant="primary" href="https://github.com/videdressing/the_11">Docs</b-btn>
     </b-jumbotron>
 
-    <div class="row venues">
+    <b-row>
       <div class="col-6 col-lg-4" v-for="venue in venues">
         <h2>{{ venue.name }}</h2>
         <b-img thumbnail fluid :src="getThumb(venue.pictures[0].url)" alt="Thumbnail" />
         <p>{{ venue.description }}</p>
         <p><router-link class="btn btn-secondary" :to="{name: 'VenueView', params: { key: venue['.key'] }}" role="button">View details &raquo;</router-link></p>
       </div><!--/span-->
-    </div><!--/row-->
+    </b-row>
   </div><!--/span-->
 </template>
 

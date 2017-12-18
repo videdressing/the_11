@@ -21,6 +21,10 @@ import './initFirebase'
 import VueFire from 'vuefire'
 Vue.use(VueFire)
 
+// algolia
+import InstantSearch from 'vue-instantsearch'
+Vue.use(InstantSearch)
+
 // resource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)

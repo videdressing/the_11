@@ -3,7 +3,7 @@
     <main-menu></main-menu>
     <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
-        <router-view></router-view>
+        <router-view :key="$route.fullPath"></router-view>
         </div><!--/row-->
 
       <hr>

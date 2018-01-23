@@ -10,6 +10,7 @@
 
       <footer>
         <p>&copy; Videdressing 2017</p>
+        <p><a href="https://github.com/videdressing/the_11">Docs</a></p>
       </footer>
     </div><!--/.container-->
   </div>

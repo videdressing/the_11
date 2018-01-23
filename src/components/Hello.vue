@@ -1,19 +1,17 @@
 <template>
-  <div class="col-12">
-    <b-jumbotron :header="msg" lead='Explore a different side of the "11ème arrondissement" with Videdressing' >
-      <p>For more information visit website</p>
-      <b-btn variant="primary" href="https://github.com/videdressing/the_11">Docs</b-btn>
-    </b-jumbotron>
-
-    <b-row>
-      <div class="col-6 col-lg-4" v-for="venue in venues">
-        <h2>{{ venue.name }}</h2>
-        <b-img thumbnail fluid :src="getThumb(venue.pictures[0].url)" alt="Thumbnail" />
-        <p>{{ venue.description }}</p>
-        <p><router-link class="btn btn-secondary" :to="{name: 'VenueView', params: { key: venue['.key'] }}" role="button">View details &raquo;</router-link></p>
-      </div><!--/span-->
-    </b-row>
-  </div><!--/span-->
+  <b-row>
+    <b-col cols="12" md="6" lg="4" v-for="venue in venues">
+      <router-link :to="{name: 'VenueView', params: { key: venue['.key'] }}">
+        <b-card overlay
+                :img-src="getThumb(venue.pictures[0].url)"
+                :img-alt="venue.name"
+                text-variant="white"
+                :title="venue.name"
+                class="text-center mb-3">
+        </b-card>
+      </router-link>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
@@ -39,26 +37,14 @@ export default {
   },
   methods: {
     getThumb: function (url) {
-      return url.replace(/v[0-9]+/, 'w_400,h_150,c_fill')
+      return url.replace(/v[0-9]+/, 'w_600,h_400,c_fill')
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.card-img-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%,rgba(0,0,0,0) 50%);
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
 </style>

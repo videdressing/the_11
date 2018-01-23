@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="md" fixed="top" type="dark" variant="dark">
+  <b-navbar toggleable="md" fixed="top" type="light" variant="light">
     <b-nav-toggle target="nav_collapse"></b-nav-toggle>
     <b-link class="navbar-brand" :to="{name: 'Hello'}">
       <span>The_11</span>

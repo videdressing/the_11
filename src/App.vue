@@ -41,6 +41,10 @@ export default {
     padding: 30px 0;
   }
 
+  .card-img-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%,rgba(0,0,0,0) 50%);
+  }
+
   /*
    * Off Canvas
    * --------------------------------------------------

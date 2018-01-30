@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 venue">
+  <div class="col-12 venue" v-if="venue['.key']">
     <b-button-toolbar aria-label="Toolbar" class="float-right">
       <b-button-group>
         <b-btn v-b-toggle.editionForm class="m-1">Edit Venue</b-btn>

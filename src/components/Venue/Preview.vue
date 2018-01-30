@@ -22,7 +22,7 @@ export default {
   props: ['venue'],
   methods: {
     getThumb: function (url) {
-      return url.replace(/v[0-9]+/, 'w_1200,h_450,c_fill')
+      return url.replace(/v[0-9]+/, 'w_1200,h_800,c_fill')
     }
   }
 }

@@ -69,7 +69,8 @@
             pictures: [],
             description: '',
             price_level: 1,
-            address: ''
+            address: '',
+            _geoloc: ''
           }
         }
       }
@@ -94,6 +95,13 @@
     methods: {
       onSubmit: function (evt) {
         evt.preventDefault()
+
+        if (this.venue.address) {
+          this.venue._geoloc = {
+            lat: this.venue.address.latitude,
+            lng: this.venue.address.longitude
+          }
+        }
 
         if (!this.venue['.key']) {
           venuesRef.push(this.venue)

@@ -23,6 +23,7 @@
                         text-variant="white"
                         :title="result.name"
                         class="text-center mb-3">
+                  &lt;{{ Math.ceil(result._rankingInfo.geoDistance / 100) * 100 }}m
                 </b-card>
               </router-link>
             </b-col>
@@ -38,9 +39,13 @@ import { createFromAlgoliaCredentials } from 'vue-instantsearch'
 export default {
   name: 'hello',
   data () {
+    let store = createFromAlgoliaCredentials('XJ4KFZWO2I', 'b29f97abde99f1dcd9874e03ee0807fc')
+    // Videdressing : Latitude : 48.859649 | Longitude : 2.378816
+    store.queryParameters = {aroundLatLng: '48.859649, 2.378816', getRankingInfo: true}
+
     return {
       msg: 'Welcome to The_11',
-      searchStore: createFromAlgoliaCredentials('XJ4KFZWO2I', 'b29f97abde99f1dcd9874e03ee0807fc')
+      searchStore: store
     }
   }
 }

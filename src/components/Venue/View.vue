@@ -1,6 +1,7 @@
 <template>
   <div class="col-12 venue" v-if="venue['.key']">
-    <b-button-toolbar aria-label="Toolbar" class="float-right">
+    <b-button-toolbar aria-label="Toolbar" class="float-right"
+      is-nav-bar v-if="$store.getters.user !== null">
       <b-button-group>
         <b-btn v-b-toggle.editionForm class="m-1">Edit Venue</b-btn>
       </b-button-group>

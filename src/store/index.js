@@ -22,7 +22,8 @@ const store = new Vuex.Store({
     ...firebaseMutations
   },
   getters: {
-    venues: state => { return state.venues }
+    venues: state => { return state.venues },
+    user: state => { return state.user }
   },
   // modules: {
   //   venues

@@ -7,19 +7,19 @@
 
     <b-collapse is-nav id="nav_collapse">
 
-      <b-nav is-nav-bar>
+      <b-nav is-nav-bar v-if="$store.getters.user === null">
         <b-nav-item :to="{name: 'Login'}">Sign in</b-nav-item>
       </b-nav>
 
-      <b-nav is-nav-bar>
+      <b-nav is-nav-bar v-else>
         <b-nav-item :to="{name: 'Logout'}">Logout</b-nav-item>
       </b-nav>
 
-      <b-nav is-nav-bar>
+      <b-nav is-nav-bar v-if="$store.getters.user !== null">
         <b-nav-item :to="{name: 'Profile'}">Profile</b-nav-item>
       </b-nav>
 
-      <b-nav is-nav-bar>
+      <b-nav is-nav-bar v-if="$store.getters.user !== null">
         <b-nav-item :to="{name: 'VenueAdd'}">Add Venue</b-nav-item>
       </b-nav>
 

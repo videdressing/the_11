@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main-menu></main-menu>
-    <div class="container">
+    <b-container fluid>
       <div class="row row-offcanvas row-offcanvas-right">
         <router-view :key="$route.fullPath"></router-view>
         </div><!--/row-->
@@ -12,7 +12,7 @@
         <p>&copy; Videdressing 2017</p>
         <p><a href="https://github.com/videdressing/the_11">Docs</a></p>
       </footer>
-    </div><!--/.container-->
+    </b-container>
   </div>
 </template>
 

@@ -56,7 +56,7 @@ export default {
   data () {
     let store = createFromAlgoliaCredentials('XJ4KFZWO2I', 'b29f97abde99f1dcd9874e03ee0807fc')
     // Videdressing : Latitude : 48.859649 | Longitude : 2.378816
-    store.queryParameters = {git : '48.859649, 2.378816', getRankingInfo: true}
+    store.queryParameters = {aroundLatLng: '48.859649, 2.378816', getRankingInfo: true}
 
     return {
       msg: 'Welcome to The_11',

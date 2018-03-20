@@ -26,8 +26,12 @@
         v-on:placechanged="getAddressData"
         country="fr"
         class="mb-3"
+        required
       >
       </vue-google-autocomplete>
+      <b-tooltip :show.sync="addressError" target="map" placement="top">
+        Please start writing an address
+      </b-tooltip>
 
       <h5>Pictures:</h5>
 
@@ -61,6 +65,7 @@
   export default {
     components: { VueGoogleAutocomplete },
     props: {
+      addressError: false,
       venue: {
         type: Object,
         default: function () {
@@ -96,11 +101,14 @@
       onSubmit: function (evt) {
         evt.preventDefault()
 
-        if (this.venue.address) {
+        if (this.venue.address.latitude && this.venue.address.longitude) {
           this.venue._geoloc = {
             lat: this.venue.address.latitude,
             lng: this.venue.address.longitude
           }
+        } else {
+          this.addressError = true
+          return false
         }
 
         if (!this.venue['.key']) {

@@ -9,7 +9,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Videdressing 2017</p>
+        <p>&copy; Videdressing 2017 - {{ currentYear }}</p>
         <p><a href="https://github.com/videdressing/the_11">Docs</a></p>
       </footer>
     </b-container>
@@ -21,7 +21,12 @@ import MainMenu from './components/MainMenu'
 
 export default {
   name: 'app',
-  components: { MainMenu }
+  components: { MainMenu },
+  data () {
+    return {
+      currentYear: (new Date()).getFullYear()
+    }
+  }
 }
 </script>
 

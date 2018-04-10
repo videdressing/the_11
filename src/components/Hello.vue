@@ -28,7 +28,9 @@
                     class="card-img">
                   <div class="card-body card-img-overlay">
                     <h4 class="card-title">{{ result.name }}</h4>
-                    &lt;{{ Math.ceil(result._rankingInfo.geoDistance / 100) * 100 }}m
+                    <span v-if="!result._rankingInfo.promoted">
+                      &lt;{{ Math.ceil(result._rankingInfo.geoDistance / 100) * 100 }}m
+                    </span>
                   </div>
                 </div>
 

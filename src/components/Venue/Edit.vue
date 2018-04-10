@@ -41,12 +41,12 @@
 
       <b-container fluid class="p-4 bg-dark mb-3">
         <b-row class="mb-2 text-center">
-          <b-col v-for="picture in venue.pictures">
+          <b-col v-for="picture in venue.pictures" :key="picture.signature">
             <b-img thumbnail fluid :src="getThumb(picture.url)" alt="Thumbnail" />
           </b-col>
         </b-row>
         <b-row class="text-center">
-          <b-col v-for="(picture, index) in venue.pictures">
+          <b-col v-for="(picture, index) in venue.pictures" :key="picture.signature">
             <b-button variant="warning" size="sm" v-on:click="removePicture(index)">Remove</b-button>
           </b-col>
         </b-row>

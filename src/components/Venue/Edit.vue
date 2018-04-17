@@ -23,6 +23,10 @@
         id="map"
         classname="form-control"
         placeholder="Please type your address"
+        :value="venue.address.street_number
+           + ' ' + venue.address.route
+           + ', ' + venue.address.locality
+           + ', ' + venue.address.country"
         v-on:placechanged="getAddressData"
         country="fr"
         class="mb-3"

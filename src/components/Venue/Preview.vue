@@ -13,7 +13,7 @@
         <pre>{{ venue.description }}</pre>
         <gmap-map
           :center="center"
-          :zoom="15"
+          :zoom="16"
           style="width: 100%; height: 300px"
         >
           <gmap-marker

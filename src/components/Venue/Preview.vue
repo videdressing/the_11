@@ -3,11 +3,11 @@
     <h1>{{ venue.name }}</h1>
     <b-row>
       <b-col sm="12" lg="6">
-        <b-carousel id="carousel1" style="text-shadow: 1px 1px 2px #333;" indicators 
-          background="#ababab" :interval="4000">
-          <b-carousel-slide v-for="picture in venue.pictures" :key="picture.signature"
-            :img-src="getThumb(picture.url)"></b-carousel-slide>
-        </b-carousel>
+        <carousel :per-page="1" style="text-shadow: 1px 1px 2px #333;">
+          <slide v-for="picture in venue.pictures" :key="picture.signature">
+            <img style="width: 100%;" :src="getThumb(picture.url)" />
+          </slide>
+        </carousel>
       </b-col>
       <b-col sm="12" lg="6">
         <pre>{{ venue.description }}</pre>
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import Vue from 'vue'
 
@@ -48,6 +49,10 @@ Vue.use(VueGoogleMaps, {
 
 export default {
   props: ['venue'],
+  components: {
+    Carousel,
+    Slide
+  },
   methods: {
     getThumb: function (url) {
       return url.replace(/v[0-9]+/, 'w_1200,h_800,c_fill')
@@ -67,5 +72,10 @@ pre {
   white-space: pre-wrap; 
   word-wrap: break-word;
   font-family: inherit;
+}
+</style>
+<style>
+.VueCarousel-dot {
+  margin-top: -10px !important;
 }
 </style>

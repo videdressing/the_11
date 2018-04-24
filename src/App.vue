@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <main-menu></main-menu>
+    <main-menu :key="$route.fullPath"></main-menu>
     <b-container fluid>
       <div class="row row-offcanvas row-offcanvas-right">
         <router-view :key="$route.fullPath"></router-view>

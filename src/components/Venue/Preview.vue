@@ -3,7 +3,8 @@
     <h1>{{ venue.name }}</h1>
     <b-row>
       <b-col sm="12" lg="6">
-        <carousel :per-page="1" style="text-shadow: 1px 1px 2px #333;">
+        <carousel :per-page="1" :paginationPadding="4" :paginationSize="6"
+          style="text-shadow: 1px 1px 2px #333;">
           <slide v-for="picture in venue.pictures" :key="picture.signature">
             <img style="width: 100%;" :src="getThumb(picture.url)" />
           </slide>
@@ -76,6 +77,6 @@ pre {
 </style>
 <style>
 .VueCarousel-dot {
-  margin-top: -10px !important;
+  margin-top: -4px !important;
 }
 </style>

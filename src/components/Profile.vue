@@ -1,5 +1,5 @@
 <template>
-<div>
+<div v-if="user">
   <h1>My Profile</h1>
   <hr />
   {{ user }}

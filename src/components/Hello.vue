@@ -61,7 +61,6 @@ export default {
     store.queryParameters = {aroundLatLng: '48.859649, 2.378816', getRankingInfo: true}
 
     return {
-      msg: 'Welcome to The_11',
       searchStore: store
     }
   }

@@ -2,26 +2,26 @@
   <b-navbar toggleable="md" fixed="top" type="light" variant="light">
     <b-nav-toggle target="nav_collapse"></b-nav-toggle>
     <b-link class="navbar-brand" :to="{name: 'Hello'}">
-      <span>The_11</span>
+      <span>Le11e.me</span>
     </b-link>
 
     <b-collapse is-nav id="nav_collapse">
 
-      <b-nav is-nav-bar v-if="$store.getters.user === null">
+      <b-navbar-nav v-if="$store.getters.user === null">
         <b-nav-item :to="{name: 'Login'}">Sign in</b-nav-item>
-      </b-nav>
+      </b-navbar-nav>
 
-      <b-nav is-nav-bar v-else>
+      <b-navbar-nav v-else>
         <b-nav-item :to="{name: 'Logout'}">Logout</b-nav-item>
-      </b-nav>
+      </b-navbar-nav>
 
-      <b-nav is-nav-bar v-if="$store.getters.user !== null">
+      <b-navbar-nav v-if="$store.getters.user !== null">
         <b-nav-item :to="{name: 'Profile'}">Profile</b-nav-item>
-      </b-nav>
+      </b-navbar-nav>
 
-      <b-nav is-nav-bar v-if="$store.getters.user !== null">
+      <b-navbar-nav v-if="$store.getters.user !== null">
         <b-nav-item :to="{name: 'VenueAdd'}">Add Venue</b-nav-item>
-      </b-nav>
+      </b-navbar-nav>
 
     </b-collapse>
   </b-navbar>

@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <main-menu :key="$route.fullPath"></main-menu>
-    <b-container fluid>
-      <div class="row row-offcanvas row-offcanvas-right">
-        <router-view :key="$route.fullPath"></router-view>
-        </div><!--/row-->
+    <b-container>
+      <transition name="slide-left" mode="out-in">
+        <div :key="$route.fullPath">
+          <b-row>
+            <router-view :key="$route.fullPath"></router-view>
+          </b-row>
+          <hr>
 
-      <hr>
-
-      <footer>
-        <p>&copy; Videdressing 2017 - {{ currentYear }}</p>
-        <p><a href="https://github.com/videdressing/the_11">Docs</a></p>
-      </footer>
+          <footer>
+            <p>&copy; Videdressing 2017 - {{ currentYear }}</p>
+            <p><a href="https://github.com/videdressing/the_11">Docs</a></p>
+          </footer>
+        </div>
+      </transition>
     </b-container>
   </div>
 </template>
@@ -50,58 +53,18 @@ export default {
     background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%,rgba(0,0,0,0) 50%);
   }
 
-  /*
-   * Off Canvas
-   * --------------------------------------------------
-   */
-  @media screen and (max-width: 767px) {
-    .row-offcanvas {
-      position: relative;
-      -webkit-transition: all .25s ease-out;
-           -o-transition: all .25s ease-out;
-              transition: all .25s ease-out;
-    }
+  .slide-left-leave-active {
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    transform: translateX(-300px);
+  }
 
-    .row-offcanvas-right {
-      right: 0;
-    }
+  .slide-left-enter {
+    opacity: 0;
+    transform: translateX(300px);
+  }
 
-    .row-offcanvas-left {
-      left: 0;
-    }
-
-    .row-offcanvas-right
-    .sidebar-offcanvas {
-      right: -100%; /* 12 columns */
-    }
-
-    .row-offcanvas-right.active
-    .sidebar-offcanvas {
-      right: -50%; /* 6 columns */
-    }
-
-    .row-offcanvas-left
-    .sidebar-offcanvas {
-      left: -100%; /* 12 columns */
-    }
-
-    .row-offcanvas-left.active
-    .sidebar-offcanvas {
-      left: -50%; /* 6 columns */
-    }
-
-    .row-offcanvas-right.active {
-      right: 50%; /* 6 columns */
-    }
-
-    .row-offcanvas-left.active {
-      left: 50%; /* 6 columns */
-    }
-
-    .sidebar-offcanvas {
-      position: absolute;
-      top: 0;
-      width: 50%; /* 6 columns */
-    }
+  .slide-left-enter-active {
+    transition: all 0.3s ease-out;
   }
 </style>

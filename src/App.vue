@@ -2,7 +2,7 @@
   <div id="app">
     <main-menu :key="$route.fullPath"></main-menu>
     <b-container>
-      <transition name="slide-left" mode="out-in">
+      <transition :name="transitionName()" mode="out-in">
         <div :key="$route.fullPath">
           <b-row>
             <router-view :key="$route.fullPath"></router-view>
@@ -28,6 +28,11 @@ export default {
   data () {
     return {
       currentYear: (new Date()).getFullYear()
+    }
+  },
+  methods: {
+    transitionName () {
+      return this.$route.fullPath === '/' ? 'slide-right' : 'slide-left'
     }
   }
 }
@@ -65,6 +70,21 @@ export default {
   }
 
   .slide-left-enter-active {
+    transition: all 0.3s ease-out;
+  }
+
+  .slide-right-leave-active {
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    transform: translateX(300px);
+  }
+
+  .slide-right-enter {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+
+  .slide-right-enter-active {
     transition: all 0.3s ease-out;
   }
 </style>

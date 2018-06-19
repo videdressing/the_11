@@ -23,10 +23,7 @@
         id="map"
         classname="form-control"
         placeholder="Please type your address"
-        :value="venue.address.street_number
-           + ' ' + venue.address.route
-           + ', ' + venue.address.locality
-           + ', ' + venue.address.country"
+        :value="getAddressPlaceHolder()"
         v-on:placechanged="getAddressData"
         country="fr"
         class="mb-3"
@@ -127,6 +124,15 @@
       },
       getAddressData: function (addressData, placeResultData, id) {
         this.venue.address = addressData
+      },
+      getAddressPlaceHolder () {
+        if (this.venue.address === undefined || this.venue.address === '') {
+          return ''
+        }
+        return this.venue.address.street_number +
+        ' ' + this.venue.address.route +
+        ', ' + this.venue.address.locality +
+        ', ' + this.venue.address.country
       },
       upload: function (files) {
         const formData = new FormData()

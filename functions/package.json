@@ -2,7 +2,7 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
-    "algoliasearch": "^3.24.9",
+    "algoliasearch": "^3.30.0",
     "firebase-admin": "~4.2.1",
     "firebase-functions": "^0.5.7"
   },

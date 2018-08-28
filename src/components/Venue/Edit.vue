@@ -66,7 +66,6 @@
   export default {
     components: { VueGoogleAutocomplete },
     props: {
-      addressError: false,
       venue: {
         type: Object,
         default: function () {
@@ -89,7 +88,8 @@
           uploadPreset: 'nnbgn8se',
           apiKey: '118663883161386',
           cloudName: 'the11'
-        }
+        },
+        addressError: false
       }
     },
     computed: {
@@ -101,6 +101,9 @@
     methods: {
       onSubmit: function (evt) {
         evt.preventDefault()
+
+        // Weird Hack
+        delete this.venue.address.administrative_area_level_2
 
         if (this.venue.address.latitude && this.venue.address.longitude) {
           this.venue._geoloc = {

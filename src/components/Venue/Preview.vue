@@ -2,7 +2,7 @@
   <div>
     <h1>{{ venue.name }}</h1>
     <b-row>
-      <b-col sm="12" lg="6">
+      <b-col lg="6">
         <carousel :per-page="1" :paginationPadding="4" :paginationSize="6"
           style="text-shadow: 1px 1px 2px #333;">
           <slide v-for="picture in venue.pictures" :key="picture.signature">
@@ -10,7 +10,9 @@
           </slide>
         </carousel>
       </b-col>
-      <b-col sm="12" lg="6">
+      <b-col lg="6">
+        <p v-if="venue.is_restaurant_ticket_friendly"><strong>TR</strong> <sup>friendly</sup></p>
+        <p v-else><strong>TR</strong> <sup><u>NOT</u> friendly</sup></p>
         <pre>{{ venue.description }}</pre>
         <gmap-map
           :center="center"

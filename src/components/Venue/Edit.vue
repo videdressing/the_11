@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12">
+  <b-col cols="12">
     <h1>{{ title }}</h1>
     <b-form @submit="onSubmit">
       <h5>Venue name:</h5>
@@ -8,9 +8,19 @@
         placeholder="Venue Name" class="mb-3"
       ></b-form-input>
 
-      <h5>Venue price level:</h5>
-      <b-form-select v-model="venue.price_level" :options="priceOptions" class="mb-3">
-      </b-form-select>
+      <b-row>
+        <b-col md="6">
+          <h5>Venue price level:</h5>
+          <b-form-select v-model="venue.price_level" :options="priceOptions" class="mb-3">
+          </b-form-select>
+        </b-col>
+
+        <b-col md="6">
+          <h5>Ticket Restaurant Friendly?</h5>
+          <b-form-checkbox v-model="venue.is_restaurant_ticket_friendly" :value="true" :unchecked-value="false">
+          </b-form-checkbox>
+        </b-col>
+      </b-row>
 
       <h5>Description:</h5>
       <b-form-textarea v-model="venue.description"
@@ -55,7 +65,7 @@
 
       <b-button type="submit" variant="success" size="lg">Ok</b-button>
     </b-form>
-  </div>
+  </b-col>
 </template>
 
 <script>
@@ -74,6 +84,7 @@
             pictures: [],
             description: '',
             price_level: 1,
+            is_restaurant_ticket_friendly: false,
             address: '',
             _geoloc: ''
           }

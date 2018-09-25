@@ -113,6 +113,15 @@
       onSubmit: function (evt) {
         evt.preventDefault()
 
+        if (!this.venue.user) {
+          this.venue.user = {
+            email: this.$store.getters.user.email,
+            photoURL: this.$store.getters.user.photoURL,
+            uid: this.$store.getters.user.uid,
+            displayName: this.$store.getters.user.displayName
+          }
+        }
+
         // Weird Hack
         delete this.venue.address.administrative_area_level_2
 

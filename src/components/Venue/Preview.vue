@@ -30,6 +30,11 @@
           {{ venue.address.route }},
           {{ venue.address.postal_code }}
         </p>
+        <p v-if="venue.user">
+          <strong>Recommended by:</strong>
+          <b-img :src="venue.user.photoURL" rounded="circle" width="25px" height="25px" />
+          {{ venue.user.displayName }}
+        </p>
       </b-col>
     </b-row>
   </div>
